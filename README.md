@@ -6,7 +6,7 @@ pip install -r requirements.txt
 ```
 
 # Step 2
-Go to 
+Go to
 ```
 ./sma/
 ```
@@ -23,5 +23,5 @@ python manage.py migrate home
 # Step 4
 Run server
 ```
-python runserver host:port
+python manage.py runserver host:port
 ```
