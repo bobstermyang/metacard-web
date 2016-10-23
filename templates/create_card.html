@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="container-fluid">
+	{% if error %}
+	 	<div class="alert box">
+			{{message}}
+		</div>
+	{% endif %}
+	<form method="POST" action="/create_card">
+		<h2>Add Card</h2>
+		<hr/>
+		<div class="field">
+			<label class="col-md-3">Number</label>
+			<div class="col-md-9">
+				<input class="form-control" type="text" name="number"/>
+			</div>
+		</div>
+		<div class="field">
+			<label class="col-md-3">CVC</label>
+			<div class="col-md-9">
+				<input class="form-control" type="text" name="cvc"/>
+			</div>
+		</div>
+		<div class="field">
+			<label class="col-md-3">EXP Year</label>
+			<div class="col-md-9">
+				<input class="form-control" type="text" name="exp_year"/>
+			</div>
+		</div>
+		<div class="field">
+			<label class="col-md-3">EXP Month</label>
+			<div class="col-md-9">
+				<input class="form-control" type="text" name="exp_month"/>
+			</div>
+		</div>
+		<hr/>
+		<input class="form-control" type="submit" class="btn btn-primary btn-default" value="Save Card"/>
+		{% csrf_token %}
+	</form>
+</div>
+{% endblock %}

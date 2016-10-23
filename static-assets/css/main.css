@@ -1,0 +1,39 @@
+
+
+/* ==========================================================================
+   Author's custom styles
+   ========================================================================== */
+
+
+
+
+
+
+
+
+
+
+.box {
+   padding: 20px;
+   border: 1px solid #E3E3E3;
+}
+.content {
+   width: 980px;
+   margin: 0 auto;
+}
+.field {
+	height: auto;
+	 margin-bottom: 10px;
+	 width: 100%;
+}
+.field:after {
+   	clear: both;
+	content: '';
+	display: block;
+}
+
+
+
+
+
+
