@@ -1,0 +1,9 @@
+{% extends 'base.html' %}
+{% block content %}
+{% if message %}
+	<div class="box">
+		{{message}}
+	</div>
+{% endif %}
+<a href="/main" class="btn btn-primary btn-default">Back</a>
+{% endblock %}

@@ -17,10 +17,43 @@ SWG_USER = 'metacard'
 SWG_KEY = '86W7F9v57Bq7gM'
 SWG_HEADER = {'application': 'json'}
 SWG_API = 'https://swagger.marqeta.com:443/v3'
+CARD_TOKEN = "fc1a795b-1cbd-433e-82e5-d33c2f065779"
+CARD_PRODUCT_TOKEN = ""
+CARD_REWARDS = [{
+	"bin_number": "424242",
+	"card": "Amazon.com Rewards Visa card",
+	"cb_global": "1",
+	"cb_groceries": "0",
+	"cb_wholesale_clubs": "0",
+	"cb_amazon": "3",
+	"cb_restaurants": "2",
+	"cb_gasoline": "2",
+	"cb_department_stores": "0",
+	"cb_fee": "0",
+	"cb_type": "Visa",
+	"cb_is_default": "0"
+},
+{
+	"bin_number": "401288",
+ 	"card": "Chase Freedom",
+	"cb_global": "1",
+	"cb_groceries": "5_4_6",
+	"cb_wholesale_clubs": "5_4_6",
+	"cb_amazon": "0",
+	"cb_restaurants": "5_7_9",
+	"cb_gasoline": "5_1_3",
+ 	"cb_department_stores": "5_10_12",
+	"cb_fee": "0",
+	"cb_type": "Visa",
+	"cb_is_default": "0"
+}]
+
+
 STRIPE_API_KEY = "sk_test_kMNhKtZy3Qj5THQA9lDwHZvG"
 
 # Django settings for {{ project_name }} - suitable for production
 # See https://docs.djangoproject.com/en/1.8/howto/deployment/checklist/
+
 
 DEBUG = True
 TEMPLATE_DEBUG = DEBUG

@@ -10,13 +10,13 @@
 		 {% if can_show_cards %}
 		 <table class="table">
 			<thead>
-				<th>Customer ID</th>
+				<th>Card</th>
 				<th>Date Created</th>
 			</thead>
 			<tbody>
 				{% for card in cards %}
 				   <tr>
-					<td>{{card.customer_id}}</td>
+					<td>{{card.card}}</td>
 				   	<td>{{card.created}}</td>
 				   </tr>
 				{% endfor %}
@@ -32,6 +32,62 @@
 		<span><strong>User Token</strong> {{user.user_token}}</span>
 		<br/>
 		<span><strong>Card Token</strong> {{user.card_token}}</span>
+	</div>
+	<hr/>
+ 	<div class="col-md-12">
+		<h3>Test Transactions</h3>
+		<hr/>
+		<div class="col-md-4">
+			<form method="POST" action="/buy_item">
+				<input type="hidden" name="type" value="amazon"/>
+				{% csrf_token %}
+				<div class="field">
+					<input type="submit" class="btn btn-primary btn-default"  value="Test Amazon Transaction"/>
+				</div>
+			</form>
+		</div>
+		<div class="col-md-4">
+			<form method="POST" action="/buy_item">
+				<input type="hidden" name="type" value="gasoline"/>
+				{% csrf_token %}
+				<div class="field">
+					<input type="submit" class="btn btn-primary btn-default" value="Test Gasoline Transaction"/>
+				</div>
+			</form>
+		</div>
+		<div class="col-md-4">
+			<form method="POST" action="/buy_item">
+				<input type="hidden" name="type" value="department_stores"/>
+				{% csrf_token %}
+				<div class="field">
+					<input type="submit" class="btn btn-primary btn-default" value="Test Department Stores Transaction"/>
+				</div>
+			</form>
+		</div>
+		<div style='clear:both;'></div>
+		
+
+		{% if can_show_transactions %}
+		<table class="table">
+			<thead>
+				<th>Card</th>
+				<th>Amount</th>
+				<th>Created</th>
+			</thead>
+			<tbody>
+				{% for transaction in transactions %}
+				<tr>
+					<td>{{transaction.card.card}}</td>
+					<td>{{transaction.amount}}</td>
+					<td>{{transaction.created}}</td>
+				</tr>
+				{% endfor %}
+			</tbody>
+		</table>
+		{% else %}
+		<div class="box">
+			No transactions listed</div>
+		{% endif %}
 	</div>
 </div>
 {% endblock %}

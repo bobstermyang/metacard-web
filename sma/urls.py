@@ -16,7 +16,7 @@ Including another URLconf
 """
 from django.conf.urls import include, url
 from django.contrib import admin
-from sma.home.views import HomeView, RegisterView, CreateCardView, MainView
+from sma.home.views import HomeView, RegisterView, CreateCardView, MainView, BuyItemView
 
 admin.autodiscover()
 
@@ -25,6 +25,7 @@ urlpatterns = [
     url(r'^$', HomeView.as_view(), name='home'),
     url(r'^register$', RegisterView.as_view(), name='register'),
     url(r'^create_card$', CreateCardView.as_view(), name='create_card'),
+    url(r'^buy_item$', BuyItemView.as_view(), name='buy_item'),
     url(r'^main$', MainView.as_view(),name='main'),
     #url(r'^admin/', include(admin.site.urls)),
 ]
